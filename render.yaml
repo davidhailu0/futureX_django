@@ -5,4 +5,5 @@ services:
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn reporting_service.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
-      - key: DATABASE_URL
+      - key: SECRET_KEY
+        generateValue: true
